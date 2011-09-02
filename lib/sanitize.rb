@@ -41,7 +41,8 @@ class Sanitize
   # or more characters followed by a colon is considered a match, even if the
   # colon is encoded as an entity and even if it's an incomplete entity (which
   # IE6 and Opera will still parse).
-  REGEX_PROTOCOL = /\A([^\/]*?)(?:\:|&#0*58|&#x0*3a)/i
+  
+  REGEX_PROTOCOL = /\A([^\/]*?)(?:\:|&#0*58|&#x0*3a)/i unless const_defined?(:REGEX_PROTOCOL)
 
   #--
   # Class Methods
